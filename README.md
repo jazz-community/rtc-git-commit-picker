@@ -12,9 +12,7 @@ It links gitLab commits to "RTC Work Items" and in reversal adding a backlink to
 <li>Fixed some text issues.</li>
 <li>Enhanced the login-logic</li>
     <ul>
-    <li>Enter-Key acts as login button</li>
-    <li>Empty fields are shown red</li>
-    <li>Wrong credentials handled</li>
+    <li>Chrome also "autofill" the textboxes</li>
     </ul>
 <li>Enhanced the error handling (Most cases now have a proper message)</li>
 </ul>
@@ -58,6 +56,5 @@ It links gitLab commits to "RTC Work Items" and in reversal adding a backlink to
     <ul>
     <li>Server not reachable</li>
     <li>No Change rights on a WorkItem</li>
-    <li>WorkItem changed in the background</li>
     </ul>
 </ul>
