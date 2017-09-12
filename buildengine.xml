@@ -1,0 +1,86 @@
+<project name="buildengine" default="all">
+	<!-- Path to the compile output log. -->
+	<property name="compileLog" value="${SERVER_BASE_PATH}/compile.xml" />
+
+	<!-- Global Tools and Infrastructure Build User -->
+	<property name="userId" value="${JBE_BUILDUSER}"  />
+	<property name="passFilePath" value="${SERVER_BASE_PATH}\configuration\pwfiles\jbe\build_user.pwd" />
+
+	<!-- name of the Zip file -->
+	<property name="zipName" value="gitLabConnector" />
+	
+	<target name="all" depends="checkEnv, runBuild" />
+
+	<!-- add test here under depends if you do unit testing -->
+	<target name="runBuild" depends="dist">
+		<echo message="Build ${buildDefinitionId} with buildLabel ${buildLabel} completed." />
+	</target>
+
+    <!-- distribute the compiled source -->
+	<target name="dist">
+		<!-- Update the build progress in Jazz by starting a new build activity. -->
+		<startBuildActivity 
+			activityIdProperty="distActivityId" 
+			label="building distribution..." 
+			buildResultUUID="${buildResultUUID}" 
+			repositoryAddress="${repositoryAddress}" 
+			userId="${userId}" 
+			passwordfile="${passFilePath}" />
+		<ant antfile="build.xml" target="dist">
+		</ant>
+
+		<!--Publish some downloadable artifacts. Files published with the artifactFilePublisher are shown on the Downloads tab of the build result editor. -->
+		<artifactFilePublisher 
+			buildResultUUID="${buildResultUUID}" 
+			repositoryAddress="${repositoryAddress}" 
+			userId="${userId}" 
+			passwordfile="${passFilePath}" 
+			verbose="true" 
+			filePath="${zipName}_${buildLabel}.zip" 
+			label="${zipName}" />
+
+		<!-- Complete the distribution activity. -->
+		<completeBuildActivity 
+			activityId="${distActivityId}" 
+			buildResultUUID="${buildResultUUID}" 
+			repositoryAddress="${repositoryAddress}" 
+			userId="${userId}" 
+			passwordfile="${passFilePath}" />
+	</target>
+	
+	<echoproperties/>
+    
+    <!-- check whether all needed information is present -->
+	<target name="checkEnv">
+		<fail message="The repositoryAddress property must be defined." unless="repositoryAddress" />
+		<echo message="Using repositoryAddress = ${repositoryAddress}" />
+
+		<fail message="The userId property must be defined." unless="userId" />
+		<echo message="Using userId = ${userId}" />
+
+		<fail message="The password property must be defined." unless="passFilePath" />
+		<!-- Don't echo the password. -->
+		<fail message="The buildDefinitionId property must be defined." unless="buildDefinitionId" />
+		<echo message="Using buildDefinitionId = ${buildDefinitionId}" />
+	</target>
+
+	<!-- These task definitions make the Jazz ant tasks available to this build file. In order to find these classnames at run time, ant must be invoked with: -lib <buildsystem-location>/buildtoolkit -->
+	<taskdef name="artifactFilePublisher" classname="com.ibm.team.build.ant.task.ArtifactFilePublisherTask" />
+
+	<taskdef name="artifactLinkPublisher" classname="com.ibm.team.build.ant.task.ArtifactLinkPublisherTask" />
+
+	<taskdef name="filePublisher" classname="com.ibm.team.build.ant.task.FilePublisherTask" />
+
+	<taskdef name="jdtCompileLogPublisher" classname="com.ibm.team.build.ant.task.JdtCompileLogPublisherTask" />
+
+	<taskdef name="junitLogPublisher" classname="com.ibm.team.build.ant.task.JUnitLogPublisherTask" />
+
+	<taskdef name="linkPublisher" classname="com.ibm.team.build.ant.task.LinkPublisherTask" />
+
+	<taskdef name="logPublisher" classname="com.ibm.team.build.ant.task.LogPublisherTask" />
+
+	<taskdef name="startBuildActivity" classname="com.ibm.team.build.ant.task.StartBuildActivityTask" />
+
+	<taskdef name="completeBuildActivity" classname="com.ibm.team.build.ant.task.CompleteBuildActivityTask" />
+
+</project>

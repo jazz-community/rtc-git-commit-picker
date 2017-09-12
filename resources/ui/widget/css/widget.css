@@ -1,0 +1,66 @@
+.create-child-widget {
+    padding: 0 10px 10px 10px;
+}
+
+.create-child-widget header {
+    position: relative;
+}
+
+.create-child-widget header a, .create-child-widget header a {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+}
+
+.create-child-widget a, .create-child-widget a:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.create-child-widget p {
+    padding: 0 0 0 10px;
+    margin: 0;
+}
+
+.create-child-widget .set-selection a {
+    padding: 0 0 0 10px;
+}
+
+.create-child-widget .selection, .create-child-widget .child-creation-button {
+    margin: 10px 0 0 0;
+    padding: 0 10px 10px 10px;
+}
+
+.create-child-widget .child-creation-button {
+    text-align: right;
+}
+
+.create-child-widget .selection fieldset {
+    border: 1px solid #d4d4d4;
+    padding: 10px;
+}
+
+.create-child-widget .selection input[type=checkbox] {
+    vertical-align: middle;
+    position: relative;
+    bottom: 1px;
+}
+
+.create-child-widget .dropdown label span {
+    width: 8em;
+    display: inline-block;
+}
+
+.create-child-widget .dropdown label select {
+    width: 12em;
+    display: inline-block;
+}
+
+.create-child-widget .dropdown.linktype {
+    padding-top: 10px;
+}
+
+.create-child-widget .selection label span {
+    margin: 0 0 0 10px;
+}
+

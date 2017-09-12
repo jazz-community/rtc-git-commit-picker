@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension
+	      point="net.jazz.ajax.webBundles">
+	</extension>
+	<extension
+	      point="com.ibm.team.workitem.web.editorToolbarAction">
+	      <action
+             action="com.siemens.bt.jazz.workitemeditor.gitLabConnector.ui.ConnectCommits"
+             iconContext="com.siemens.bt.jazz.workitemeditor.gitLabConnector"
+             iconDisabledUri="ui/images/icons/gitLab.png"
+             iconUri="ui/images/icons/gitLab.png"
+             id="connectcommits.action"
+             isMenuAction="true"
+             label="Connect to GitLab Commits">
+	      </action>
+	</extension>
+	
+	<!-- bind javascript modules to css files for BT AddOns -->
+	<extension point="net.jazz.ajax.cssBindingSets">
+		<cssBindingSet id="com.siemens.bt.jazz.workitemeditor.gitLabConnector" path="">
+            <!-- bindings used in all modules -->		
+        	<cssBinding jsModule="com.siemens.bt.jazz.workitemeditor.gitLabConnector.ui.ConnectCommits">
+                <cssModule path="/ui/widget/css/widget.css"/>
+            </cssBinding>
+        </cssBindingSet>  
+    </extension>
+</plugin>
