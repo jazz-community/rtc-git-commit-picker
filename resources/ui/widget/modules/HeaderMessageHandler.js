@@ -6,7 +6,7 @@ define([
 ], function (declare, domGeom, query, registry) {
     var _wic = com.ibm.team.workitem.web.client.internal.WorkItemClient;
     var HeaderMessageHandler = declare("com.siemens.bt.jazz.rtc.workitemeditor.presentation.linkcreator.ui.HeaderMessageHandler", null, {
-        
+
         INFO: _wic.INFO,
         WARNING: _wic.WARNING,
         ERROR: _wic.ERROR,
@@ -23,24 +23,24 @@ define([
             });
         },
 
-		_setupDijitWorkItemHeaderObject: function() {
-			var editorHeaderObjects = query(".com-ibm-team-workItem-workItemEditorHeader");
-			var visibleEditorHeaderObjects = this._filterVisible(editorHeaderObjects);
-			if (typeof visibleEditorHeaderObjects !== "undefined" && visibleEditorHeaderObjects !== null &&
-				typeof visibleEditorHeaderObjects.length === "number" && typeof visibleEditorHeaderObjects[0].id === "string") {
-				var firstEditorHeader = visibleEditorHeaderObjects[0].id;
-				var dijitObj = registry.byId(firstEditorHeader);
-				if (typeof dijitObj !== "undefined" &&
-					typeof dijitObj.setHeaderMessage === "function" &&
-					typeof dijitObj.clearValidationMessage === "function" &&
-					typeof dijitObj._refreshButton !== "undefined") {
-					return dijitObj;
-				}
-			}
-			return null;
-		},
+        _setupDijitWorkItemHeaderObject: function() {
+            var editorHeaderObjects = query(".com-ibm-team-workItem-workItemEditorHeader");
+            var visibleEditorHeaderObjects = this._filterVisible(editorHeaderObjects);
+            if (typeof visibleEditorHeaderObjects !== "undefined" && visibleEditorHeaderObjects !== null &&
+                typeof visibleEditorHeaderObjects.length === "number" && typeof visibleEditorHeaderObjects[0].id === "string") {
+                var firstEditorHeader = visibleEditorHeaderObjects[0].id;
+                var dijitObj = registry.byId(firstEditorHeader);
+                if (typeof dijitObj !== "undefined" &&
+                    typeof dijitObj.setHeaderMessage === "function" &&
+                    typeof dijitObj.clearValidationMessage === "function" &&
+                    typeof dijitObj._refreshButton !== "undefined") {
+                    return dijitObj;
+                }
+            }
+            return null;
+        },
 
-		_filterVisible: function(elements) {
+        _filterVisible: function(elements) {
             var self = this;
             var response = [];
             elements.forEach(function (element) {
@@ -49,9 +49,9 @@ define([
                 }
             });
             return response;
-		},
-		
-		_isVisible: function(element) {
+        },
+
+        _isVisible: function(element) {
             var el = domGeom.getContentBox(element);
             return (el.w > 0 || el.h > 0);
         },
