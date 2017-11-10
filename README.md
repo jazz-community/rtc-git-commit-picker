@@ -1,3 +1,5 @@
+[![travis-svg][travis-svg]][travis]
+
 # Git Commit Picker
 The Git Commit Picker enables you to link Git Commits with RTC Work Items from within the RTC Work Item Editor.
 
@@ -28,3 +30,6 @@ Pull requests are also very welcome.
 ## Licensing
 Copyright (c) Siemens AG. All rights reserved.  
 Licensed under the [MIT](https://github.com/jazz-community/rtc-git-commit-picker/blob/master/LICENSE) License.
+
+[travis-svg]: https://travis-ci.org/jazz-community/rtc-git-commit-picker.svg?branch=master
+[travis]: https://travis-ci.org/jazz-community/rtc-git-commit-picker

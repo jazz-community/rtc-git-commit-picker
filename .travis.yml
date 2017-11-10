@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- 6
+before_install:
+- npm install
+script:
+- npm run build
+deploy:
+  provider: releases
+  api_key:
+    secure: 1f93TzCWO2nx0FHUAwgEKQRHiXHoq/GkupVCz6RHRtpMeol96IpGPke0gcUZwhJARyEiydyvkiB728SMUvV4qX1GA8jfm8+MrR5RA0HRXNunl66SglxQYAJklUa5EP7ZU3jyvS8nPCsc3Kb54Ua/1t6ImmUy5kWyV7L4MCDAiAVTliKFPbtPuOTtMn6UQ1Vy8pD8U3WUTcmWfkqV7hSMu1ZurHBo26B1yEekTOuf4Arl72RrOzkiMN4HMIytRuYBtaTTPfoGG7ZgjG11zcC7B2k6iwTgO5DQVUurypSIJW3oMIUyl6LHikU50z2B9i3Vd+R2pYt28jpw+Z2rzFtlRAwYBFI70mXdF4zhZtjFO2Zjw4tJpfy40kUHLeLNqpD5Q9wM6Qq18beShhldgfDyQy1UA9VAWBkFSXo3vDJcVONOToXSwIZauNr2Ut7oOMOLcVFxb+/jWfZZZJPaTuIuu4S/etXY415Gme0f7ER7s65JQ9jJSh5H23U4vIQ1xz2/uPvWlR6EUJOoszdbldfjiVAeBHK0BUaGBS8aypNt7Xe/Y9iKfNwS8VTeN5UOAbf6zcA40vsUrrUchd0fA3H1+V0Fapsp/72oRevz5olfXEAkFuZnEOEhd8G7uZ6eQiLUskAmVYpH/3RkWOf2po3hg3F+73TZSUbZ04eogCfiIV8=
+  file: com.siemens.bt.jazz.workitemeditor.gitCommitPicker*.zip
+  file_glob: true
+  skip_cleanup: true
+  on:
+    tags: true
+    repo: jazz-community/rtc-git-commit-picker
