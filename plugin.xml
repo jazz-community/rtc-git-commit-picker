@@ -7,21 +7,21 @@
 	<extension
 	      point="com.ibm.team.workitem.web.editorToolbarAction">
 	      <action
-             action="com.siemens.bt.jazz.workitemeditor.gitLabConnector.ui.ConnectCommits"
-             iconContext="com.siemens.bt.jazz.workitemeditor.gitLabConnector"
-             iconDisabledUri="ui/images/icons/gitLab.png"
-             iconUri="ui/images/icons/gitLab.png"
-             id="connectcommits.action"
+             action="com.siemens.bt.jazz.workitemeditor.gitCommitPicker.ui.PickCommits"
+             iconContext="com.siemens.bt.jazz.workitemeditor.gitCommitPicker"
+             iconDisabledUri="ui/images/icons/GitIcon.png"
+             iconUri="ui/images/icons/GitIcon.png"
+             id="pickcommits.action"
              isMenuAction="true"
-             label="Connect to GitLab Commits">
+             label="Link to Git Commits">
 	      </action>
 	</extension>
 	
 	<!-- bind javascript modules to css files for BT AddOns -->
 	<extension point="net.jazz.ajax.cssBindingSets">
-		<cssBindingSet id="com.siemens.bt.jazz.workitemeditor.gitLabConnector" path="">
+		<cssBindingSet id="com.siemens.bt.jazz.workitemeditor.gitCommitPicker" path="">
             <!-- bindings used in all modules -->		
-        	<cssBinding jsModule="com.siemens.bt.jazz.workitemeditor.gitLabConnector.ui.ConnectCommits">
+        	<cssBinding jsModule="com.siemens.bt.jazz.workitemeditor.gitCommitPicker.ui.PickCommits">
                 <cssModule path="/ui/widget/css/widget.css"/>
             </cssBinding>
         </cssBindingSet>  

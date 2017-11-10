@@ -1,60 +1,30 @@
-<h1> GitLab Commit Connector </h1>
-<p>
-What can you do with this "Work Item Editor"-Plugin? <br>
-It gives the possibility to work with an gitLab VCS in RTC. <br>
-It links gitLab commits to "RTC Work Items" and in reversal adding a backlink to the gitLab commit. <br>
-!!! For now we can only load the last 100 commits !!! <br>
-</p>
+# Git Commit Picker
+The Git Commit Picker enables you to link Git Commits with RTC Work Items from within the RTC Work Item Editor.
 
-<h2>Version: 1.0.3</h2>
-<h4>Features (New):</h4>
-<ul>
-<li>Fixed some text issues.</li>
-<li>Enhanced the login-logic</li>
-    <ul>
-    <li>Chrome also "autofill" the textboxes</li>
-    </ul>
-<li>Enhanced the error handling (Most cases now have a proper message)</li>
-</ul>
+## Goal
+The target of this project is to enable RTC users to work with a Git based version control system without breaking the traceability between RTC Work Items and Source Code changes.
 
-<h2>Older Versions</h2>
-<h4>Features:</h4>
-<ul>
-<li>A possibility where the given commits can be filtered</li>
-<li>A sorting mechanism which sorts the commits based on their "commit date"</li>
-<li>Commits always sorted descending/ascending by "commit date"</li>
-<li>Handling of multiple gitLab locations</li>
-<li>Adding "Related Artifacts" links to an "RTC Work Item" based on selected gitLab commits</li>
-<li>Adding a "backlink" (Link to "RTC Work Item") to the selected gitLab commits</li>
-<li>Current RTC user is mentioned in the "backlink"</li>
-<li>Detection of "Already Linked" commits</li>
-<li>RTC Links: Now saved as "Git Commit"</li>
-<li>Login-Mode: If no "Access Token" is saved, the plugin switches to login mode.</li>
-    <ul>
-    <li>You can login with your GitLab credentials</li>
-    </ul>
-</ul>
+## Detailed Information
+See the [Wiki pages](https://github.com/jazz-community/rtc-git-commit-picker/wiki) of this repository for more detailed information on how to setup and use the Git Commit Picker.
 
-<h2>TODOS:</h2>
-<ul>
-<li>Commit overview</li>
-    <ul>
-    <li>Filters - Add specific fields to search</li>
-    <li>Sorting - Sort by different values</li>
-    <li>UI - Create columns to display more information like: UserName or Commit date</li>
-    </ul>
-<li>RTC Links</li>
-    <ul>
-    <li>Make them "Rich Hover" capable</li>
-    </ul>
-<li>Misc</li>
-    <ul>
-    <li>Implement a pagination logic to load more than 100 commits</li>
-    <li>Test special server locations (E.g. 123.123.123.123:123)</li>
-    </ul>
-<li>ErrorHandling (Need to be implemented!)</li>
-    <ul>
-    <li>Server not reachable</li>
-    <li>No Change rights on a WorkItem</li>
-    </ul>
-</ul>
+## Compatibility
+This plugin has been tested with multiple versions of RTC and is known to be compatible with v6.0.3, v6.0.4, and v6.0.5
+
+Currently, the only supported Git system is GitLab. The plugin uses the fourth version of the GitLab api (API v4) which was released with GitLab 9.0. Older versions of GitLab will not work at the moment but may be supported soon.
+
+If you have tested the plugin with other versions of RTC or GitLab please let us know so that we can update this page.
+
+## Dependencies
+This plugin requires the [Secure User Property Store](https://github.com/jazz-community/rtc-secure-user-property-store) extension to be installed on the RTC server.  
+More information and instructions can be found in the description on that repository page.
+
+## Releases
+The latest stable release can be downloaded from the [Releases page](https://github.com/jazz-community/rtc-git-commit-picker/releases).
+
+## Contributing
+Please use the [Issue Tracker](https://github.com/jazz-community/rtc-git-commit-picker/issues) of this repository to report issues or suggest enhancements.  
+Pull requests are also very welcome.
+
+## Licensing
+Copyright (c) Siemens AG. All rights reserved.  
+Licensed under the [MIT](https://github.com/jazz-community/rtc-git-commit-picker/blob/master/LICENSE) License.

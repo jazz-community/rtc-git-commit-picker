@@ -1,0 +1,33 @@
+{
+  "name": "com.siemens.bt.jazz.workitemeditor.gitcommitpicker",
+  "version": "1.1.0",
+  "description": "Pick Git commits directly from a Work Item",
+  "main": "./resources/ui/PickCommits.js",
+  "dependencies": {
+    "base64-js": "^1.2.1",
+    "buffer": "^5.0.7",
+    "gzip-js": "^0.3.2"
+  },
+  "devDependencies": {
+    "jazz-update-site-webpack-plugin": "^0.4.1",
+    "webpack": "^3.6.0"
+  },
+  "scripts": {
+    "build": "webpack --optimize-minimize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazz-community/rtc-git-commit-picker.git"
+  },
+  "keywords": [
+    "Jazz",
+    "Git",
+    "GitLab"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jazz-community/rtc-git-commit-picker/issues"
+  },
+  "homepage": "https://github.com/jazz-community/rtc-git-commit-picker#readme"
+}
