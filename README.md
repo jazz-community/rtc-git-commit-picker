@@ -24,7 +24,7 @@ More information and instructions can be found in the description on that reposi
 The latest stable release can be downloaded from the [Releases page](https://github.com/jazz-community/rtc-git-commit-picker/releases).
 
 ## Contributing
-Please use the [Issue Tracker](https://github.com/jazz-community/rtc-absence-widget/issues) of this repository to report issues or suggest enhancements.
+Please use the [Issue Tracker](https://github.com/jazz-community/rtc-git-commit-picker/issues) of this repository to report issues or suggest enhancements.
 
 For general contribution guidelines, please refer to [CONTRIBUTING.md](https://github.com/jazz-community/rtc-git-commit-picker/blob/master/CONTRIBUTING.md)
 
