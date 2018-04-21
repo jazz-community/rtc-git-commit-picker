@@ -1,3 +1,5 @@
+:warning: **This repository is deprecated and we will no longer actively maintain or improve this plugin**. Please use our successor project, the [RTC Git Connector](https://github.com/jazz-community/rtc-git-connector), which add support for Issues and Pull/Merge Requests as well as support for GitHub alongside GitLab. Rich Hover Support for links and a greatly improved UI will make you smile :smile: :warning: 
+
 [![travis-svg][travis-svg]][travis]
 
 # Git Commit Picker
